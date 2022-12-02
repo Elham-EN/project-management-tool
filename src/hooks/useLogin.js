@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { authService } from "../firebase/config";
+import { authService, firestoreService } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
 export const useLogin = () => {
@@ -12,8 +12,12 @@ export const useLogin = () => {
     setError(null);
     setIsPending(true);
     try {
-      //Sign the user out
+      //Sign the user in
       const res = await authService.signInWithEmailAndPassword(email, password);
+      //Change user status to online
+      await firestoreService.collection("users").doc(res.user.uid).update({
+        online: true,
+      });
       //dispatch login action
       dispatch({ type: "LOGIN", payload: res.user });
       if (!isCancelled) {

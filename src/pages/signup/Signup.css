@@ -6,3 +6,15 @@
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
   background: #fff;
 }
+
+.auth-form .click-link {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  font-size: 0.8em;
+  margin-top: 30px;
+}
+
+.auth-form .click-link a {
+  text-decoration: none;
+}

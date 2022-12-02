@@ -1,6 +1,7 @@
 import "./Signup.css";
 import React, { useState } from "react";
 import { useSignUp } from "../../hooks/useSignUp";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -33,11 +34,11 @@ export default function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(email, password, displayName, thumbnail);
-    setEmail("");
-    setPassword("");
-    setDisplayName("");
-    setThumbnail(null);
-    setThumbnailError(null);
+    // setEmail("");
+    // setPassword("");
+    // setDisplayName("");
+    // setThumbnail(null);
+    // setThumbnailError(null);
   };
 
   return (
@@ -86,6 +87,12 @@ export default function Signup() {
         </button>
       )}
       {error && <div className="error">{error}</div>}
+      <div className="click-link">
+        <p>Already have an account? Please</p>
+        <span>
+          <Link to="/login">sign in</Link>
+        </span>
+      </div>
     </form>
   );
 }

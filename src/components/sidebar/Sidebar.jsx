@@ -15,6 +15,7 @@ export default function Sidebar() {
           <Avatar src={user.photoURL} />
           <br /> <br />
           <p>{user.displayName}</p>
+          <hr />
         </div>
         <nav className="links">
           <ul>

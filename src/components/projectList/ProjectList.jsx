@@ -20,6 +20,16 @@ export default function ProjectList({ projects }) {
               ))}
             </ul>
           </div>
+          <div
+            style={{
+              fontSize: "0.7em",
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: "3px",
+            }}
+          >
+            <b>Category:</b> {project.category}
+          </div>
         </Link>
       ))}
     </div>
